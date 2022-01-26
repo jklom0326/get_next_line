@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 20:26:33 by shan              #+#    #+#             */
-/*   Updated: 2022/01/26 22:46:03 by shan             ###   ########.fr       */
+/*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
+/*   Updated: 2022/01/26 21:30:51 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "get_next_line.h"
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# include <unistd.h>
-# include <stdlib.h>
-
-char	*get_next_line(int fd);
-
-size_t	ft_strlen(char const *s);
-
-
-#endif
+char	*get_next_line(int fd)
+{
+}

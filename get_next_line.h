@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 20:26:33 by shan              #+#    #+#             */
-/*   Updated: 2022/01/26 22:46:03 by shan             ###   ########.fr       */
+/*   Updated: 2022/02/16 01:44:36 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 char	*get_next_line(int fd);
 
 size_t	ft_strlen(char const *s);
-
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
 
 #endif

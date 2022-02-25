@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
-/*   Updated: 2022/02/24 01:01:07 by shan             ###   ########.fr       */
+/*   Updated: 2022/02/25 21:36:44 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -40,26 +40,26 @@ char	*ft_save(char *save)
 
 char	*ft_read(int fd, char *save)
 {
-	char	*buff;
+	char	*buf;
 	int		bytes;
 
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
+	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
 		return (NULL);
 	buff[0] = '\0';
 	bytes = 1;
-	while (!(ft_strchr(buff, '\n')) && bytes)
+	while (!(ft_strchr(buf, '\n')) && bytes)
 	{
-		bytes = read(fd, buff, BUFFER_SIZE);
+		bytes = read(fd, buf, BUFFER_SIZE);
 		if (bytes == -1)
 		{
-			free(buff);
+			free(buf);
 			return (NULL);
 		}
-		buff[bytes] = '\0';
-		save = ft_strjoin(save, buff);
+		buf[bytes] = '\0';
+		save = ft_strjoin(save, buf);
 	}
-	free(buff);
+	free(buf);
 	return (save);
 }
 

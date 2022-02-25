@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 20:26:33 by shan              #+#    #+#             */
-/*   Updated: 2022/02/24 01:03:01 by shan             ###   ########.fr       */
+/*   Updated: 2022/02/24 01:17:35 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # endif
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 1000
 # endif
 
 char	*get_next_line(int fd);

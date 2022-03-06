@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
-/*   Updated: 2022/03/06 20:39:11 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/06 21:07:33 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -22,7 +22,7 @@ char	*get_line(char *save)
 	while (save[i] && save[i] != '\n')
 		i++;
 	str = (char *)malloc(sizeof(char) * (i + 2));
-	if (!s)
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (save[i] && save[i] != '\n')
@@ -54,13 +54,13 @@ char	*ft_save(char *save)
 		return (NULL);
 	}
 	str = (char *)malloc(sizeof(char) * (ft_strlen(save) - i + 1));
-	if (!s)
+	if (!str)
 		return (NULL);
 	i++;
 	c = 0;
 	while (save[i])
-		s[c++] = save[i++];
-	s[c] = '\0';
+		str[c++] = save[i++];
+	str[c] = '\0';
 	free(save);
 	return (str);
 }

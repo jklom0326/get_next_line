@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
-/*   Updated: 2022/03/06 21:17:35 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/06 21:28:42 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -32,7 +32,7 @@ char	*get_line(char *save)
 	}
 	if (save[i] == '\n')
 	{
-		save[i] = save[i];
+		str[i] = save[i];
 		i++;
 	}
 	str[i] = '\0';

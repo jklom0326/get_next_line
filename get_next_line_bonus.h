@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 23:28:06 by shan              #+#    #+#             */
-/*   Updated: 2022/03/06 21:53:11 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/06 23:04:45 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(cahr *s);
-char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(char *s);
+char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 
 #endif

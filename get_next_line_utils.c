@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:45:20 by shan              #+#    #+#             */
-/*   Updated: 2022/02/24 01:02:44 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/06 20:51:24 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -16,7 +16,7 @@ size_t	ft_strlen(char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }
@@ -26,14 +26,16 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (0);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
+		if (s[i] == (char) c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)s + i);
 	return (0);
 }
 
@@ -63,20 +65,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	result[i] = '\0';
 	free(s1);
 	return (result);
-}
-
-char	*ft_strcpy(char *dst, const char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] && src[i] != '\n')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (src[i] == '\n')
-		dst[i++] = '\n';
-	dst[i] = '\0';
-	return (dst);
 }

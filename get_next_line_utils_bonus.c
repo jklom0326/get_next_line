@@ -6,10 +6,10 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:45:20 by shan              #+#    #+#             */
-/*   Updated: 2022/03/06 22:43:47 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/07 19:42:42 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char *s)
 {

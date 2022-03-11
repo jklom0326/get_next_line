@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
-/*   Updated: 2022/03/06 22:47:36 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/06 23:02:49 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -96,10 +96,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
-	save = read_and_save(fd, save[fd]);
+	save[fd] = read_and_save(fd, save[fd]);
 	if (!save[fd])
 		return (NULL);
 	line = get_line(save[fd]);
-	save = ft_save(save[fd]);
+	save[fd] = ft_save(save[fd]);
 	return (line);
 }

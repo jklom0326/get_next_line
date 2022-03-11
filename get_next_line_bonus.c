@@ -6,10 +6,14 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/03/06 23:02:49 by shan             ###   ########.fr       */
+=======
+/*   Updated: 2022/03/07 19:42:23 by shan             ###   ########.fr       */
+>>>>>>> a250854b9d96ec93a4ab5857797de26e2dd62bee
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_line(char *save)
 {

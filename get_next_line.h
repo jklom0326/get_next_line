@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 20:26:33 by shan              #+#    #+#             */
-/*   Updated: 2022/03/06 21:08:09 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/11 23:12:50 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
-# include <fcntl.h>
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 10240
-# endif
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(char *s);

@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:45:20 by shan              #+#    #+#             */
-/*   Updated: 2022/03/07 16:57:48 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/12 16:58:36 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -41,28 +41,21 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*result;
-	size_t	i;
-	size_t	c;
+	int		i;
+	int		len1;
+	int		len2;
+	char	*str;
 
-	if (!s1)
-	{
-		s1 = (char *)malloc(1 * sizeof(char));
-		s1[0] = '\0';
-	}
-	if (!s1 || !s2)
+	i = 0;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!str)
 		return (NULL);
-	result = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	i = -1;
-	c = 0;
-	if (s1)
-		while (s1[++i] != '\0')
-			result[i] = s1[i];
-	while (s2[c] != '\0')
-		result[i++] = s2[c++];
-	result[ft_strlen(s1) + ft_strlen(s2)] = '\0';
-	free(s1);
-	return (result);
+	while (*s1)
+		str[i++] = *s1++;
+	while (*s2)
+		str[i++] = *s2++;
+	str[i] = '\0';
+	return (str);
 }

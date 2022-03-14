@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: shan <shan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 23:28:06 by shan              #+#    #+#             */
-/*   Updated: 2022/03/11 23:25:00 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/14 12:47:05 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(char *s);
+size_t  ft_strlen(char *str);
 char	*ft_strchr(char *s, int c);
+void	*ft_memcpy(void *dst, void *src, size_t n);
 char	*ft_strjoin(char *s1, char *s2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
-/*   Updated: 2022/03/14 14:15:50 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/14 19:59:15 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -75,13 +75,17 @@ char	*read_and_save(int fd, char *save)
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
+	{
+		free(save);
 		return (NULL);
+	}
 	read_bytes = 1;
 	while (!ft_strchr(save, '\n') && read_bytes != 0)
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes == -1)
 		{
+			free(save);
 			free(buff);
 			return (NULL);
 		}

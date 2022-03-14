@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:45:20 by shan              #+#    #+#             */
-/*   Updated: 2022/03/14 14:31:01 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/14 14:36:21 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -41,7 +41,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, void *src, size_t n)
 {
 	size_t	i;
 
@@ -56,7 +56,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*result;
 	size_t	s1_len;

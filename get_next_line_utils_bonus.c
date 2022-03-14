@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:45:20 by shan              #+#    #+#             */
-/*   Updated: 2022/03/14 12:46:49 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/14 14:31:01 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -41,30 +41,44 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	size_t	c;
-	char	*str;
+
+	i = 0;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dst);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*result;
+	size_t	s1_len;
+	size_t	s2_len;
 
 	if (!s1)
 	{
 		s1 = (char *)malloc(1 * sizeof(char));
+		if (s1 == NULL)
+			return (NULL);
 		s1[0] = '\0';
 	}
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	i = -1;
-	c = 0;
-	if (s1)
-		while (s1[++i] != '\0')
-			str[i] = s1[i];
-	while (s2[c] != '\0')
-		str[i++] = s2[c++];
-	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	result = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (result == NULL)
+		return (0);
+	ft_memcpy(result, s1, s1_len);
+	ft_memcpy(result + s1_len, s2, s2_len);
+	result[s1_len + s2_len] = '\0';
 	free(s1);
-	return (str);
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:30:17 by shan              #+#    #+#             */
-/*   Updated: 2022/03/14 19:18:26 by shan             ###   ########.fr       */
+/*   Updated: 2022/03/16 01:39:33 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -55,7 +55,10 @@ char	*ft_save(char *save)
 	}
 	str = (char *)malloc(sizeof(char) * (ft_strlen(save) - i + 1));
 	if (!str)
+	{
+		free(save);
 		return (NULL);
+	}
 	i++;
 	c = 0;
 	while (save[i])
@@ -72,13 +75,17 @@ char	*read_and_save(int fd, char *save)
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
+	{
+		free(save)
 		return (NULL);
+	}
 	read_bytes = 1;
 	while (!ft_strchr(save, '\n') && read_bytes != 0)
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes == -1)
 		{
+			free(save);
 			free(buff);
 			return (NULL);
 		}
@@ -92,7 +99,7 @@ char	*read_and_save(int fd, char *save)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save[257];
+	static char	*save[256];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
